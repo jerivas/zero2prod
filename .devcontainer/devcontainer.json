@@ -1,0 +1,56 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+  "name": "zero2prod",
+  "image": "rust:1.65.0",
+  "extensions": [
+    "bungcip.better-toml",
+    "eamodio.gitlens",
+    "me-dutour-mathieu.vscode-github-actions",
+    "rust-lang.rust-analyzer",
+    "serayuzgur.crates",
+    "sleistner.vscode-fileutils",
+    "streetsidesoftware.code-spell-checker",
+    "wmaurer.change-case"
+  ],
+  "settings": {
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "/bin/bash"
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/*.pyc": true,
+      "**/*.pyo": true,
+      "__pycache__": true,
+      ".coverage": true,
+      "coverage": true,
+      "htmlcov": true,
+      ".tags": true,
+      ".cache": true,
+      ".pytest_cache": true,
+      ".vscode": true,
+      "collected-assets": true,
+      "staticfiles": true,
+      "**/*.egg-info": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/*.css.map": true,
+      "**/*.js.map": true,
+      "yarn.lock": true,
+      "yarn-debug.log": true,
+      "yarn-error.log": true
+    }
+  }
+}
