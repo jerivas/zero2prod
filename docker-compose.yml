@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://zero2prod:zero2prod@postgres:5432/zero2prod
+    volumes:
+      - .:/app:cached
+    ports:
+      - '8080:8080'
+    stdin_open: true
+    tty: true
+    working_dir: /app
+    command: sleep infinity
+
+  # Runs the database process:
+  postgres:
+    image: postgres:13.4
+    environment:
+      POSTGRES_USER: zero2prod
+      POSTGRES_PASSWORD: zero2prod

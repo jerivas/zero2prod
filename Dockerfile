@@ -1,0 +1,9 @@
+FROM rust:1.65.0
+
+RUN rustup component add rustfmt
+RUN rustup component add clippy
+RUN cargo install --version="~0.6" sqlx-cli --no-default-features --features rustls,postgres
+
+WORKDIR /app
+COPY . /app
+RUN cargo build

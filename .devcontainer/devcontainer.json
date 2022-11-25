@@ -1,7 +1,10 @@
 // See https://aka.ms/vscode-remote/devcontainer.json for format details.
 {
   "name": "zero2prod",
-  "image": "rust:1.65.0",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "web",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
   "extensions": [
     "bungcip.better-toml",
     "eamodio.gitlens",
