@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     clang \
  && rm -rf /var/lib/apt/lists/*
 RUN cargo install --version="~0.6" sqlx-cli --no-default-features --features rustls,postgres
+RUN cargo install cargo-watch
 
 WORKDIR /app
 COPY . /app
